@@ -1,0 +1,34 @@
+footer.php
+-----------
+<div id="prefooter-container">
+OR
+<div id="footer-container">
+
+get_template_part('parts/footer-area');
+do_action('foundationPress_layout_end');
+ARE THEY NEEDED
+
+header.php
+==========
+OKAY
+
+#incorporate settings from assets/scss/config/_settings.scss
+
+
+---------------------------------------
+CHECK THESE
+        deleted by them: Gruntfile.js
+        deleted by them: assets/scss/config/_custom-settings.scss
+        deleted by them: assets/scss/config/_settings.scss
+        both modified:   assets/scss/foundation.scss
+        deleted by them: assets/scss/site/_front.scss
+        deleted by them: assets/scss/site/_global.scss
+        deleted by them: assets/scss/site/_topbar.scss
+        both modified:   footer.php
+        both modified:   header.php
+        both modified:   page.php
+        deleted by them: parts/off-canvas-menu.php
+        deleted by them: parts/top-bar.php
+        both modified:   sidebar.php
+        added by us:     templates/front-page.php
+        deleted by us:   templates/front.php

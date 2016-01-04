@@ -11,32 +11,36 @@
  * @since FoundationPress 1.0.0
  */
 
-get_header(); ?>
+ get_header(); ?>
 
-<?php get_template_part( 'parts/featured-image' ); ?>
+ <?php get_template_part( 'parts/featured-image' ); ?>
 
-<div class="row">
-	<?php get_template_part( 'parts/check-if-sidebar-exist' ); ?>
-	<?php do_action( 'foundationpress_before_content' ); ?>
+ <div id="page" role="main">
 
-	<?php while ( have_posts() ) : the_post(); ?>
-		<article <?php post_class() ?> id="post-<?php the_ID(); ?>">
-			<?php get_template_part('parts/harveys-page-title'); ?>
-			<?php do_action('foundationpress_page_before_entry_content'); ?>
-			<div class="entry-content">
-				<?php the_content(); ?>
-			</div>
-		</article>
-	<?php endwhile;?>	
-	<?php do_action( 'foundationpress_after_content' ); ?>
+ <?php do_action( 'foundationpress_before_content' ); ?>
+ <?php while ( have_posts() ) : the_post(); ?>
+   <article <?php post_class('main-content') ?> id="post-<?php the_ID(); ?>">
+       <?php get_template_part('parts/harveys-page-title'); ?>
+       <?php do_action( 'foundationpress_page_before_entry_content' ); ?>
+       <div class="entry-content">
+           <?php the_content(); ?>
+       </div>
+       <footer>
+           <?php wp_link_pages( array('before' => '<nav id="page-nav"><p>' . __( 'Pages:', 'foundationpress' ), 'after' => '</p></nav>' ) ); ?>
+           <p><?php the_tags(); ?></p>
+       </footer>
+       <?php do_action( 'foundationpress_page_before_comments' ); ?>
+       <?php comments_template(); ?>
+       <?php do_action( 'foundationpress_page_after_comments' ); ?>
+   </article>
+ <?php endwhile;?>
 
-	</div>
-	<?php 
-	//gets the file sidebar.php
-    get_sidebar(); 
-    ?>
-</div>
+ <?php do_action( 'foundationpress_after_content' ); ?>
+ <?php get_sidebar(); ?>
+
+ </div>
 <?php 
 // this is a new action added for Harveys
-do_action( 'foundationpress_after_page' ); ?>
-<?php get_footer(); ?>
+	do_action( 'foundationpress_after_page' ); 
+	get_footer(); 
+?>

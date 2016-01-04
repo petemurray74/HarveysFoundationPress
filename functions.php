@@ -24,11 +24,8 @@ require_once( 'library/foundation.php' );
 /** Register all navigation menus */
 require_once( 'library/navigation.php' );
 
-/** Add desktop menu walker */
-require_once( 'library/menu-walker.php' );
-
-/** Add off-canvas menu walker */
-require_once( 'library/offcanvas-walker.php' );
+/** Add menu walkers for top-bar and off-canvas */
+require_once( 'library/menu-walkers.php' );
 
 /** Create widget areas in sidebar and footer */
 require_once( 'library/widget-areas.php' );
@@ -45,8 +42,11 @@ require_once( 'library/theme-support.php' );
 /** Add Nav Options to Customer */
 require_once( 'library/custom-nav.php' );
 
-/** Add protocol relative theme assets */
-require_once( 'library/protocol-relative-theme-assets.php' );
+/** Change WP's sticky post class */
+require_once( 'library/sticky-posts.php' );
+
+/** If your site requires protocol relative url's for theme assets, uncomment the line below */
+// require_once( 'library/protocol-relative-theme-assets.php' );
 
 // Harveys custom functions
 require_once('library/harveys-custom-functions.php');
